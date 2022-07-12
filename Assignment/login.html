@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<style type="text/css">
+		@import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap');
+		*{
+		font-family: 'Poppins', sans-serif;
+		}
+			body{
+			background-color: #D0D0D0;
+			/*background-image: linear-gradient(270deg, #A9C9FF 0%, #FFBBEC 100%);*/
+
+
+		}
+		div{
+			border: 1px solid;
+			padding: 50px 90px;
+			width: 180px;
+				background-color: grey;
+/*background-image: linear-gradient(0deg, #A9C9FF 0%, #FFBBEC 100%);*/
+			/*margin:100px;*/
+		}
+		input[type="email"]{
+			/*width:100%;*/
+			padding: 10px 10px;
+		}
+		input[type="password"]{
+			/*width:100%;*/
+			padding: 10px 10px;
+		}
+		input[type="submit"]{
+			/*margin-left: 40?px;*/
+		}
+		@media only screen and (max-width: 600px){
+			div{
+				border: none;
+			}
+		}
+
+	</style>
+</head>
+<body>
+	<center><h1>Login Page</h1></center>
+	<center>
+	<div>
+		<label id="l2"></label>
+		<form id="f">
+		<table>
+			<tr><td><input type="email" placeholder="Enter your email" name="" id="email"></b></td></tr>
+			<tr><td><input type="password" placeholder="Enter your password" name="" id="pas"></td></tr>
+			<tr><td><center><input type="button" name="" onclick="loginValidation()" value="submit"></center></td></tr>
+		</table>
+		</form>
+	</div>
+</center>
+<script type="text/javascript">
+	function loginValidation(){
+		let details={
+			"n180696@rguktn.ac.in":"Vineeth8121",
+			"n180698@rguktn.ac.in":"sunil333"
+		}
+		let e=document.getElementById("email").value
+		let p=document.getElementById("pas").value
+		if(details[e]==p){
+			document.getElementById("f").style.display="none"
+			document.getElementById("l2").innerText="You have entered valid details"
+			// alert("")
+		}
+		else{
+			document.getElementById("email").style.border="1px solid red"
+			document.getElementById("pas").style.border="2px solid red"
+			return false
+		}
+
+	}
+</script>
+</body>
+</html>

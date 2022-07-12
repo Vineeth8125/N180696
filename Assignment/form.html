@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<style type="text/css">
+		@import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap');
+		*{
+		font-family: 'Poppins', sans-serif;
+		}
+
+		body{
+			background-color: #D0D0D1;/*#A9C9FF;
+background-image: linear-gradient(180deg, #A9C9FF 0%, #FFBBEC 100%);
+*/
+
+		}
+		#div-2{
+			width: 750px;
+			margin-left: 300px;
+			border: 1px solid black;
+		}
+		#div{
+			border: 1px solid black;
+			width: 750px;
+			margin: 90px;
+			margin-top: 40px;
+			margin-left: 300px;
+			/*margin: 300px;*/
+			/*margin-left:150px; */
+			/*padding-bottom:20px;*/
+		background-color:grey;/* #A9C9FF;
+background-image: linear-gradient(0deg, #A9C9FF 0%, #FFBBEC 100%)*/;
+
+		}
+		table{
+			/*margin-left: 100px;*/
+		}
+		td{
+			font-size: 20px;
+			margin-top:20px; 
+		}
+		/*tr{
+			margin-top: 50px;
+		}*/
+		input[type="text"]{
+			/*padding: 5px 50px;*/
+			width: 500px;
+			height: 25px;
+			border: 1px solid black;
+			font-size: 20px;
+			margin-bottom: 4px;
+		}
+		input[type="password"]{
+			width: 500px;
+			height: 25px;
+			border: 1px solid black;
+			font-size: 20px;
+			/*padding: 2px 0px;*/
+		}
+		select{
+			font-size: 20px;
+		}
+		textarea{
+			padding: 0px 80px;
+		}
+	
+		#email{
+			padding: 5px 0px;
+			padding-right: 330px;
+			float: left;
+			margin-bottom: 0px;
+		}
+		
+         #sub1 {
+            /*background-image: linear-gradient(to right, #DD5E89 0%, #F7BB97  51%, #DD5E89  100%);*/
+            margin-left: 180px;
+            padding: 8px 15px;
+            text-align: center;
+            /*text-transform: uppercase;
+            transition: 0.5s;
+            background-size: 200% auto;
+            color: white;            
+            box-shadow: 0 0 20px #eee;*/
+            border-radius: 10px;
+            background-color: green;
+            /*display: block;*/
+          }
+
+          #sub1:hover {
+            background-position: right center; /* change the direction of the change here */
+            color: #fff;
+            text-decoration: none;
+          }
+
+         #sub2 {
+           /* background-image: linear-gradient(to right, #FEAC5E 0%, #C779D0  51%, #FEAC5E  100%);*/
+           background-color: red;
+            margin: 10px;
+            padding: 8px 15px;
+            text-align: center;
+            /*text-transform: uppercase;
+            transition: 0.5s;
+            background-size: 200% auto;
+            color: white;            
+            box-shadow: 0 0 20px #eee;*/
+            border-radius: 10px;
+            /*display: block;*/                                    
+          }
+
+          #sub2:hover {
+            background-position: right center; /* change the direction of the change here */
+            color: #fff;
+            text-decoration: none;
+          }
+         @media only screen and (max-width: 600px){
+         	#div{
+         		margin-left:30px;
+         		width: 400px;
+         		margin-right: 0px;
+         	}
+         	#div-2{
+         		margin-left: 0px;
+         		width: 450px;
+         	}
+         	table{
+         		/*float:+;*/
+         		/*margin: 0px;*/
+         		/*border: 1px solid red*/
+         		margin-left: 30px
+         	}
+         	input[type="text"]{
+         		width: 300px;
+         	}
+         	input[type="password"]{
+         		width: 300px
+         	}
+         	#email{
+         		padding-right: 150px
+         	}
+         	#sub1{
+         		margin-left: 80px;
+         	}
+         }
+         
+	</style>
+
+</head>
+<body>
+	<div id="div">
+	<form action="login.html" method="post" onsubmit="return validate()">
+	<center>
+		<table>
+			<center><h1>Registration Page</h1></center>
+			<tr><td><input type="text" id="1" placeholder="FirstName" onkeyup="fn1()"></td><td><label id="1_3" style="color: red;font-size:15px;"></label></td></tr>
+			
+			<tr><td><input type="text" id="1_2" placeholder="LastName" onkeyup="fn1()"></td><td><label id="1_4" style="color: red;font-size:15px;"></label></td></tr>
+			
+			<tr><td style="font-size: 20px;"><b>FullName</b>:<b id="fn"></b></td></tr>
+
+			
+			<tr><td><input type="Email" name="" id="email" placeholder="Email"></td><td><label id="email_1" style="color: red;font-size:15px;"></label></td></tr>
+
+			<tr><td><input type="password" id="2" placeholder="Password"><img src="close.png" id="img" height="30px" width="30px" onclick="img2() "></td><td><label style="color: red;font-size:15px;" id="pas_1"></label></td></tr>
+			
+			<tr><td style="font-size: 20px;"><b>Gender</b>:male<input type="checkbox" id="3_1">female<input type="checkbox" id="3_2"></td><td><label id="3_3" style="color: red;font-size:15px;"></label></td></tr>
+
+			<tr><td style="font-size: 20px;"><b>DateOfBirth: </b><input name="" type="date" id="date1"></td></tr>
+
+			<tr><td style="font-size: 20px;" onmouseover="age1()"><b>Age:</b><b id="age"></b></td></tr>
+			
+			<tr><td style="font-size: 20px;"><b>Country</b>:<select id="4_1"><option>India(+91)</option><option>USA(+0)</option></select></td></tr>
+			
+			<tr><td><input type="text" id="4_2" placeholder="PhoneNumber" ></td><td><label id="4_3" style="color: red;font-size:15px;"></label></td></tr>
+			
+			<tr><td style="font-size: 20px;"><b>Hobbies</b>:</td></tr><tr><td>Listening Music<input type="checkbox" id="c1">Watching Sports<input type="checkbox" id="c2"> Studying<input type="checkbox" id="c3">Writing<input type="checkbox" name="" id="c4"></td><td><label id="c" style="color: red;font-size:15px;"></label></td></tr>
+
+			<tr><td style="font-size:20px;"><b>Photo</b>:<input type="file" name="" size="" id="file"></td><td><label style="color: red;font-size:15px;"></label></td></tr>
+			<tr><td><input type="checkbox" name="" id="agree" onclick="agree1()">I agree the terms and conditions</td></tr>
+			<tr><td><input type="submit" value="submit" name="" id="sub1" disabled><input type="reset" name="" value="reset" id="sub2" onclick="res()"></td></tr>
+		</table>
+	</center>
+	</form>
+	</div>
+	<div id="div-2">
+		<b>FullName:</b><label id="fname"></label><br>
+		<b>Email:</b><label id="p_email"></label><br>
+		<b>Gender:</b><label id="gen"></label><br>
+		<b>DOB:</b><label id="d_o_b"></label><br>
+		<b>AGE:</b><label id="a_g_e"></label><br>
+		<b>PhoneNumber:</b><label id="ph_no"></label><br>
+		<b>Hobbies:</b><label id="hob_1"></label>
+	</div>
+	<script type="text/javascript">
+		let username={}
+		let count=0
+		let age=0
+		let ahob=["Listening Music","Watching Sports","Studying","Writing"]
+		let arr=["c1","c2","c3","c4"]
+		let p=document.getElementById("email");
+		let c_1=document.getElementById("3_1")
+		let c_2=document.getElementById("3_2")
+		let date_g=document.getElementById("date1")
+		let h=document.getElementById("c4")
+		h.addEventListener('keyup',hob)
+		ph=document.getElementById("4_2")
+		ph.addEventListener('keyup',ph_n)
+		date_g.addEventListener('keyup',p_date)
+		c_1.addEventListener('keyup',gender)
+		c_2.addEventListener('keyup',gender)
+		p.addEventListener('keyup',pemail)
+		function validate(){
+			let a=document.getElementById("1").value
+			let a1=document.getElementById("1_2").value
+			let c1=document.getElementById("3_1").checked
+			let c2=document.getElementById("3_2").checked
+			let pas=document.getElementById("2").value
+			// alert(pas.length)
+			let e=document.getElementById("email").value;
+			// document.getElementsByTagName("div").style.padding-left="80px";
+			// document.getElementsByTagName("div").style.padding-right="80px";
+			let f=/[a-z]+/i
+			if(!(f.test(a))){
+				count=count+1
+				document.getElementById("1_3").innerText="Enter valid name!!!!"
+			}
+			if(!(f.test(a1))){
+				count=count+1
+				document.getElementById("1_4").innerText="Enter valid name!!!!"
+			}
+			if(a.length<4 || a.length>20){
+				document.getElementById("1_3").innerText="Enter valid name!!!!"
+				document.getElementById("1").style.border="2px solid red"
+				count=count+1
+			}
+			if(a1.length<4 || a1.length>20){
+				// document.getElementById("1_4").innerText="Enter valid name!!!!"
+				document.getElementById("1_4").innerText="Enter valid name!!!!"
+				document.getElementById("1_2").style.border="2px solid red"
+				count=count+1
+			}
+			if(pas.length<6){
+				document.getElementById("pas_1").innerText="Enter 6 digits atleast!!!"
+				document.getElementById("2").style.border="2px solid red"
+				count=count+1
+			}
+			let pat=/^[a-z][a-z 0-9 \.?]+@[a-z]+\.([a-z]+\.[a-z]+$|[a-z]+$)/i
+			if(!(pat.test(e))){
+				count=count+1
+				document.getElementById("email_1").innerText="please a enter a valid Email!!!"
+				document.getElementById("email").style.border="2px solid red"
+			}
+			if(c1 & c2 ||(!(c1)& !(c2))){
+				document.getElementById("3_3").innerText="Select one option only!!!"
+				// document.getElementById("1").style.border="2px solid red"
+				count=count+1
+			}
+			
+			let ph=document.getElementById("4_1").value
+			
+			if(ph=='India(+91)'){
+				let p=/^\d{10}/
+				ph=document.getElementById("4_2").value
+				if(!(p.test(ph))){
+					document.getElementById("4_3").innerText="Enter valid Indain number!!!!";
+					document.getElementById("4_2").style.border="2px solid red"
+					count=count+1
+				}
+			}
+			else{
+				let p=/^\d{3}-\d{3}-\d{4}$/
+				ph=document.getElementById("4_2").value
+				if(!(p.test(ph))){
+					document.getElementById("4_3").innerText="Enter valid USA number!!!!";
+					document.getElementById("4_2").style.border="2px solid red"
+					count=count+1				}
+				
+			}
+			
+			let c=0
+			for(let i=0;i<arr.length;i++){
+				if(document.getElementById(arr[i]).checked){
+					c=c+1
+				}
+			}
+			// alert(c)
+			if(c<2){
+				count=count+1
+				document.getElementById("c").innerText="Please select two options only!!!"
+			}
+			// if(document.getElementById("file").size>51200){
+			// 	document.getElementById("file_1").innerText="Photo size should be less than 50kb!!!!"
+			// 	count=count+1
+			// }
+			var x=window.matchMedia("(max-width:600px)")
+			if(x.matches){
+				document.getElementById("1_3").style.display="none";
+				document.getElementById("email_1").style.display="none";
+				document.getElementById("1_4").style.display="none";
+			document.getElementById("4_3").style.display="none";
+			document.getElementById("3_3").style.display="none";
+			document.getElementById("c").style.display="none";
+			document.getElementById("pas_1").style.display="none"
+
+			}
+			setTimeout(error,3000)
+			if(count>0){
+				return false
+			}
+			else
+				alert("Are you sure to submit")
+				login()
+				return true
+		
+		}
+		function fn1(){
+			let a=document.getElementById("1").value
+			let a1=document.getElementById("1_2").value
+			document.getElementById("fn").innerText=a+a1
+			document.getElementById("fname").innerText=a+a1
+		}
+		function error(){
+			document.getElementById("1_3").style.display="none";
+			document.getElementById("email_1").style.display="none";
+			document.getElementById("1").style.border="1px solid black"
+			document.getElementById("1_2").style.border="1px solid black"
+			document.getElementById("4_2").style.border="1px solid black"
+			document.getElementById("1_4").style.display="none";
+			document.getElementById("4_3").style.display="none";
+			document.getElementById("3_3").style.display="none";
+			document.getElementById("c").style.display="none";
+			document.getElementById("email").style.border="1px solid black"
+			document.getElementById("pas_1").style.display="none"
+			document.getElementById("2").style.border="1px solid black"
+
+			// setTimeout(error2,5000)
+
+		}
+
+		function img2(){
+			// alert("hello")
+			if(document.getElementById("2").type=='password'){
+				document.getElementById("2").type="text";
+				document.getElementById("img").src="open.png";
+				
+			}
+			else{
+				document.getElementById("2").type="password";
+				document.getElementById("img").src="close.png";
+			}
+				// document.getElementsById("img").src="open.png"
+		}
+		function res(){
+			alert("Are you sure want to reset the page")
+		}
+		function agree1(){
+			let a=document.getElementById("agree").checked
+			if(!a){
+				document.getElementById("sub1").disabled=true
+			}
+			else{
+				document.getElementById("sub1").disabled=false
+			}
+		}
+		function res(){
+			alert("Are you surley want to reset!!!")
+		}
+		function age1(){
+			let date=new Date(document.getElementById("date1").value)
+			// alert(date)
+			let year=date.getFullYear()
+			let date_c=new Date()
+			let year_c=date_c.getFullYear()
+		 	age=year_c-year
+		 	document.getElementById("age").innerText=age
+			document.getElementById("a_g_e").innerText=age
+		}
+		function pemail(){
+			let e=document.getElementById("email").value;
+			document.getElementById("p_email").innerText=e;
+		}
+		function gender(){
+			let c_1=document.getElementById("3_1").checked
+			let c_2=document.getElementById("3_2").checked
+			if(c_1){
+				document.getElementById("gen").innerText="Male";	
+			}
+			else if(c_2)
+				document.getElementById("gen").innerText="Female";
+		}
+		function p_date(){
+			let date=new Date(document.getElementById("date1").value)
+			let year=date.getFullYear()
+			let month=date.getMonth()
+			month++
+			let day=date.getDate()
+			if(month<10){
+				month='0'+month
+			}
+			if(day<10){
+				day='0'+day
+			}
+			document.getElementById("a_g_e").innerText=day+"-"+month+"-"+year
+		}
+		function ph_n(){
+			document.getElementById("ph_no").innerText=ph.value	
+		}
+		function hob(){
+			for(let i=0;i<arr.length;i++){
+				if(document.getElementById(arr[i]).checked){
+					document.getElementById("hob_1").text=ahob[i]
+				}
+			}
+		}
+	</script>
+	<script type="text/javascript" src="project_x.js"></script>
+</body>
+</html>
